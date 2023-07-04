@@ -10,7 +10,6 @@ const misProductos = [
     { id: 9, nombre: "game9", precio: 900, img: "public/img/9.jpg" },
     { id: 10, nombre:"game10", precio: 1000, img:"public/img/10.jpg" },
 ];
-
 export const getProductos = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -18,3 +17,6 @@ export const getProductos = () => {
         }, 2000);
     });
 };
+
+
+
