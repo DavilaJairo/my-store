@@ -12,7 +12,7 @@ const misProductos = [
 ];
 export const getProductos = () => {
     return new Promise((resolve) => {
-        setTimeout(() => {
+        setTimeout( () => {
             resolve(misProductos);
         }, 2000);
     });
