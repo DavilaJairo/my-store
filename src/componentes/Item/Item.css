@@ -24,3 +24,16 @@
     border: none;
     cursor: pointer;
 }
+
+.contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    background: slategray;
+    justify-content: center;
+}
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0rem;
+    text-align: center;
+}

@@ -1,32 +1,37 @@
-import React from 'react';
+import CartWidget from "../CartWidget/CartWidget"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css'
+import {Link, NavLink} from "react-router-dom"
 
-function NavBar() {
-  return (
-    <Navbar data-bs-theme="dark" expand="lg" className="bg-body-tertiary">
+const NavBar = () =>{
+    return (
+
+    <Navbar  expand="lg" className="navbar" >
       <Container>
-        <Navbar.Brand href="#home">GameStore</Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand >GameStore</Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#featured">Destacados</Nav.Link>
-            <Nav.Link href="#favorite">Favoritos</Nav.Link>
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#Action">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#Adventure">Adventure</NavDropdown.Item>
-              <NavDropdown.Item href="#Terror">Terror</NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="ms-auto">
+            <li>
+              <NavLink to="/categoria/1">Home</NavLink>
+            </li>
+            <li>
+              <NavLink to="/categoria/2">Destacados</NavLink>
+            </li>
+            <li>
+              <NavLink to="/categoria/3">Favoritos</NavLink>
+            </li>
           </Nav>
-          <CartWidget/>
         </Navbar.Collapse>
       </Container>
+      <CartWidget/>
     </Navbar>
   );
 }
 
-export default NavBar;
+
+export default NavBar

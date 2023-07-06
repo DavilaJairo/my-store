@@ -1,22 +1,47 @@
 const misProductos = [
-    { id: 1, nombre: "game1", precio: 500, img: "public/img/1.jpg" },
-    { id: 2, nombre: "game2", precio: 300, img: "public/img/2.jpg" },
-    { id: 3, nombre: "game3", precio: 200, img: "public/img/3.jpg" },
-    { id: 4, nombre: "game4", precio: 900, img: "public/img/4.jpg" },
-    { id: 5, nombre: "game5", precio: 1000, img:"public/img/5.jpg" },
-    { id: 6, nombre: "game6", precio: 500, img: "public/img/6.jpg" },
-    { id: 7, nombre: "game7", precio: 300, img: "public/img/7.jpg" },
-    { id: 8, nombre: "game8", precio: 200, img: "public/img/8.jpg" },
-    { id: 9, nombre: "game9", precio: 900, img: "public/img/9.jpg" },
-    { id: 10, nombre:"game10", precio: 1000, img:"public/img/10.jpg" },
+    { id: 1, nombre: "game1", precio: 500, img: "../img/1.jpg", idCat: "1" },
+    { id: 2, nombre: "game2", precio: 300, img: "../img/2.jpg", idCat: "1" },
+    { id: 3, nombre: "game3", precio: 200, img: "../img/3.jpg", idCat: "1" },
+    { id: 4, nombre: "game4", precio: 900, img: "../img/4.jpg", idCat: "1" },
+    { id: 5, nombre: "game5", precio: 1000, img:"../img/5.jpg", idCat: "1" },
+    { id: 6, nombre: "game6", precio: 500, img: "../img/6.jpg", idCat: "2" },
+    { id: 7, nombre: "game7", precio: 300, img: "../img/7.jpg", idCat: "2" },
+    { id: 8, nombre: "game8", precio: 200, img: "../img/8.jpg", idCat: "2" },
+    { id: 9, nombre: "game9", precio: 900, img: "../img/9.jpg", idCat: "2" },
+    { id: 10, nombre:"game10", precio: 1000, img:"../img/10.jpg", idCat: "2" },
+    { id: 10, nombre:"game11", precio: 500, img:"../img/11.jpg", idCat: "2" },
+    { id: 10, nombre:"game12", precio: 400, img:"../img/12.jpg", idCat: "2" },
 ];
+
+
 export const getProductos = () => {
     return new Promise((resolve) => {
-        setTimeout( () => {
+        setTimeout(() => {
             resolve(misProductos);
-        }, 2000);
-    });
-};
+        }, 100)
+    })
+}
 
 
+//Creamos una nueva función similar a la anterior pero qu enos retorne un solo item: 
 
+export const getUnProducto = (id) => {
+    return new Promise(resolve => {
+        setTimeout( () => {
+            const producto = misProductos.find(prod=> prod.id === id);
+            resolve(producto);
+        }, 100)
+    })
+}
+
+
+//Creamos una función que retora un array de una determinada categoría de producto: 
+
+export const getProductosPorCategoria = (idCategoria) => {
+    return new Promise ( resolve => {
+        setTimeout( () => {
+            const productosCategoria = misProductos.filter(prod => prod.idCat === idCategoria);
+            resolve(productosCategoria);
+        }, 100 )
+    })
+}
