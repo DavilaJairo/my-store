@@ -23,7 +23,7 @@ const NavBar = () =>{
               <NavLink to="/categoria/2">Destacados</NavLink>
             </li>
             <li>
-              <NavLink to="/categoria/3">Favoritos</NavLink>
+              <NavLink to="/categoria/3">Mas Vendidos</NavLink>
             </li>
           </Nav>
         </Navbar.Collapse>

@@ -2,12 +2,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: crimson;
     border-bottom: 1px solid black;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 li {
     display: inline-block;
     margin: 1rem;
     cursor: pointer;
+    list-style: none;
+}
+
+nav.navbar.navbar.navbar-expand-lg.navbar-light {
+    background-color: #343a40;
 }

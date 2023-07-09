@@ -1,28 +1,32 @@
-import { useState, useEffect } from "react";
-import { getProductos, getProductosPorCategoria } from "../../asyncmock";
-import ItemList from "../ItemList/ItemList";
+import React, { useEffect, useState } from "react";
+import { getUnProducto } from "../../asyncmock";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
-const ItemListContainer = (props) => {
-    const [productos, setProductos] = useState([]);
+const ItemDetailContainer = () => {
+  const [producto, setProducto] = useState(null);
+  const { idItem } = useParams();
 
-    const { idCategoria } = useParams();
+  useEffect(() => {
+    getUnProducto(idItem)
+      .then((res) => setProducto(res))
+      .catch((error) => console.log(error));
+  }, [idItem]);
 
-    useEffect(() => {
-        const funcion = idCategoria ? getProductosPorCategoria : getProductos;
+  return (
+    <div>
+      {producto ? (
+        <ItemDetail
+          id={producto.id}
+          nombre={producto.nombre}
+          precio={producto.precio}
+          img={producto.img}
+        />
+      ) : (
+        <p>Cargando...</p>
+      )}
+    </div>
+  );
+};
 
-        funcion(idCategoria)
-            .then(res => setProductos(res))
-
-    }, [idCategoria])
-
-
-    return (
-        <>
-            <h2> {props.greeting} </h2>
-            <ItemList productos={productos} />
-        </>
-    )
-}
-
-export default ItemListContainer
+export default ItemDetailContainer;

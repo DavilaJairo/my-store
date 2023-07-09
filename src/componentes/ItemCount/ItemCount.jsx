@@ -1,13 +1,13 @@
-import { useState } from "react";
+/*import { useState } from "react";
+import './itemCount.css';
 
-//Paso 1, tenemos que trabajar con un estado. En este caso el estado va a ser un numerito con el número de productos seleccionados por el cliente. Tenemos un Hook que nos permite crear un estado y se llama "useState"
 
-//Paso 2, necesito importar "useState"
+
 
 
 const ItemCount = () => {
     const [contador, setContador] = useState(1);
-    //useState me retorna un array con dos elementos. El primero es el estado actual y el segundo es una función que me actualiza ese estado. 
+    
 
     const incrementar = () => {
         if(contador < 10) {
@@ -32,6 +32,47 @@ const ItemCount = () => {
     )
 }
 
-//Las funciones van sin parentesis porque  se ejecutarían al momento de renderizarse. Y solo queremos que se ejecute cuando el visitante haga click en los botones. 
 
-export default ItemCount
+
+export default ItemCount*/
+import React, { useState } from "react";
+import "./itemCount.css";
+
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [contador, setContador] = useState(initial);
+
+  const incrementar = () => {
+    if (contador < stock) {
+      setContador(contador + 1);
+    }
+  };
+
+  const decrementar = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+    }
+  };
+
+  const handleAgregar = () => {
+    onAdd(contador);
+  };
+
+  return (
+    <div className= "itemCount">
+      <div className= "itemCount__controls">
+        <button className= "itemCount__button" onClick={decrementar}>
+          -
+        </button>
+        <p className= "itemCount__cantidad">{contador}</p>
+        <button className= "itemCount__button" onClick={incrementar}>
+          +
+        </button>
+      </div>
+      <button className= "itemCount__agregar" onClick={handleAgregar}>
+        Agregar al carrito
+      </button>
+    </div>
+  );
+};
+
+export default ItemCount;
