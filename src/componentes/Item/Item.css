@@ -28,7 +28,7 @@
 .contenedorProductos {
     display: flex;
     flex-wrap: wrap;
-    background: slategray;
+    background: #000;
     justify-content: center;
 }
 #root {
@@ -37,3 +37,4 @@
     padding: 0rem;
     text-align: center;
 }
+

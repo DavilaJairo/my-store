@@ -1,19 +1,35 @@
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: crimson;
-    border-bottom: 1px solid black;
-    font-size: 3rem;
+.navbar {
+  background-color: #2b292995;
 }
 
-li {
-    display: inline-block;
-    margin: 1rem;
-    cursor: pointer;
-    list-style: none;
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-nav.navbar.navbar.navbar-expand-lg.navbar-light {
-    background-color: #343a40;
+.nav-link {
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #565656;
+  border-radius: 0.25rem;
+}
+
+.navbar-toggle-icon {
+  background-color: #fff;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.cart-widget {
+  color: #fff;
 }

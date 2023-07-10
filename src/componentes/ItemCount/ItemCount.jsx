@@ -1,42 +1,4 @@
-/*import { useState } from "react";
-import './itemCount.css';
-
-
-
-
-
-const ItemCount = () => {
-    const [contador, setContador] = useState(1);
-    
-
-    const incrementar = () => {
-        if(contador < 10) {
-            setContador(contador + 1);
-        }
-    }
-
-    const decrementar = () => {
-        if (contador > 1) {
-            setContador(contador - 1);
-        }
-    }
-
-
-    return (
-        <>
-            <button onClick={decrementar}> - </button>
-            <p> {contador} </p>
-            <button onClick={incrementar}> + </button>
-
-        </>
-    )
-}
-
-
-
-export default ItemCount*/
 import React, { useState } from "react";
-import "./itemCount.css";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [contador, setContador] = useState(initial);

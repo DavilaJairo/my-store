@@ -29,14 +29,7 @@ export const getUnProducto = (id) => {
     }, 100);
   });
 };
-/*export const getUnProducto = (id) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const producto = misProductos.find((prod) => prod.id === id);
-      resolve(producto);
-    }, 100);
-  });
-};*/
+
 
 export const getProductosPorCategoria = (idCategoria) => {
   return new Promise((resolve) => {
