@@ -1,8 +1,6 @@
 import "./ItemDetail.css";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { BsCheckCircle } from "react-icons/bs";
-import CartWidget from "../CartWidget/CartWidget";
 
 const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
   const [contador, setContador] = useState(1);
@@ -12,14 +10,12 @@ const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
   const incrementar = () => {
     if (contador < 10) {
       setContador(contador + 1);
-      actualizarCantidadCarrito(contador + 1); // Actualiza el estado del contador en CartWidget
     }
   };
 
   const decrementar = () => {
     if (contador > 1) {
       setContador(contador - 1);
-      actualizarCantidadCarrito(contador - 1); // Actualiza el estado del contador en CartWidget
     }
   };
 
@@ -52,21 +48,15 @@ const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
     });
   };
 
-  const actualizarCantidadCarrito = (cantidad) => {
-    setCantidadCarrito(cantidad);
-  };
-
   return (
     <div className= "itemDetail">
       <h2>Nombre: {nombre}</h2>
       <h3>Precio: {precio}</h3>
       <p>ID: {id}</p>
-      <img src={img} alt={nombre} style={{ maxWidth: "80%" }} />
+      <img src={img} alt={nombre} style={{ maxWidth: "35%" }} />
 
       <p className= "itemDetail__descripcion">
-        Descripción: Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum dicta sint dignissimos cum accusamus,
-        ipsum dolorem ullam amet accusantium maiores blanditiis, sit porro iusto corporis ipsa exercitationem tempore
-        assumenda rem? {descripcion}
+        Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, autem. Explicabo commodi molestiae soluta eaque quos nostrum voluptatibus quam, laudantium impedit! Quaerat excepturi deserunt sed illo soluta necessitatibus placeat similique. {descripcion}
       </p>
 
       {compraFinalizada ? (
@@ -88,8 +78,6 @@ const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
           </button>
         </div>
       )}
-
-      
     </div>
   );
 };

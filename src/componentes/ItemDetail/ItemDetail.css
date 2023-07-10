@@ -7,13 +7,14 @@
 }
 
 .itemDetail__descripcion {
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .itemDetail__contador {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    justify-content: center;
 }
 
 .itemDetail__cantidad {
@@ -47,6 +48,10 @@
 @media (max-width: 768px) {
   .itemDetail__contador {
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
   }
 
   .itemDetail__cantidad {
@@ -59,9 +64,6 @@
     font-size: 14px;
   }
 }
-
-
-
 
 
 
