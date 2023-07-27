@@ -83,3 +83,4 @@ export const CarritoProvider = ({children}) => {
 }
 
 
+export default CarritoProvider;
