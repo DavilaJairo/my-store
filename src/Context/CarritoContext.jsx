@@ -81,6 +81,3 @@ export const CarritoProvider = ({children}) => {
     //Children, usamos esta propiedad especial para representar a todos aquellos componentes que puedan necesitar el carrito y sus métodos. 
 
 }
-
-
-export default CarritoProvider;
