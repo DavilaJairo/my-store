@@ -1,0 +1,87 @@
+/* Checkout.css */
+.checkout {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo transparente respetando tonalidad dark */
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Efecto de sombra futurista */
+}
+
+.checkout h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.miInput {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo transparente respetando tonalidad dark */
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+textarea.miInput {
+  resize: vertical;
+}
+
+.miInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.miInput:focus {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo dark al enfocar */
+}
+
+.error-msg {
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.miBtn {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  background-color: #ff4081;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50px;
+  outline: none;
+  text-transform: uppercase; /* Mayúsculas en el texto del botón */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.miBtn:hover {
+  background-color: #ff79b0;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo transparente respetando tonalidad dark */
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-group select option {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo transparente respetando tonalidad dark */
+}
+
+.form-group select:focus {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo dark al enfocar */
+}

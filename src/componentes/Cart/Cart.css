@@ -1,0 +1,38 @@
+.cart {
+  margin: 20px;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.cart h2 {
+  margin-bottom: 20px;
+}
+
+.cart h3 {
+  margin: 10px 0;
+}
+
+.cart__button {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; /* Agrega un margen derecho para separar los botones */
+}
+
+.cart__button:hover {
+  background-color: #666;
+}
+
+.cart__button:last-child {
+  background-color: #ff4081;
+}
+
+.cart__button:last-child:hover {
+  background-color: #ff79b0;
+}

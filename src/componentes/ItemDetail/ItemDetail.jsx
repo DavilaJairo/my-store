@@ -1,40 +1,48 @@
-import "./ItemDetail.css";
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import './ItemDetail.css';
 import Swal from "sweetalert2";
 
-const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
-  const [contador, setContador] = useState(1);
+import { CarritoContext } from '../../context/CarritoContext';
+import { useContext } from 'react';
+
+const ItemDetail = ({ id, nombre, precio, img, stock }) => {
   const [compraFinalizada, setCompraFinalizada] = useState(false);
-  const [cantidadCarrito, setCantidadCarrito] = useState(0);
 
-  const incrementar = () => {
-    if (contador < 10) {
-      setContador(contador + 1);
-    }
-  };
-
-  const decrementar = () => {
-    if (contador > 1) {
-      setContador(contador - 1);
-    }
-  };
+  const { agregarProducto } = useContext(CarritoContext);
 
   const finalizarCompra = () => {
-    setCompraFinalizada(true);
-    Swal.fire({
-      title: "¡Compra Finalizada!",
-      icon: "success",
-      confirmButtonColor: "#007BFF",
-      background: "#000",
-      iconColor: "#fff",
-      customClass: {
-        icon: "swal2-success-icon",
-      },
-    });
+    if (stock === 0) {
+      Swal.fire({
+        title: "Error",
+        text: "No hay stock disponible para este producto.",
+        icon: "error",
+        confirmButtonColor: "#007BFF",
+        background: "#000",
+        iconColor: "#fff",
+        customClass: {
+          icon: "swal2-error-icon",
+        },
+      });
+    } else {
+      setCompraFinalizada(true);
+      Swal.fire({
+        title: "¡Compra Finalizada!",
+        text: "¡Gracias por tu compra!",
+        icon: "success",
+        confirmButtonColor: "#007BFF",
+        background: "#000",
+        iconColor: "#fff",
+        customClass: {
+          icon: "swal2-success-icon",
+        },
+      });
+    }
   };
 
-  const agregarAlCarrito = () => {
-    setCantidadCarrito((prevCantidad) => prevCantidad + contador);
+  const agregarAlCarrito = (cantidad) => {
+    agregarProducto({ id, nombre, precio, img }, cantidad); // Agregamos "img" a los datos del producto
     Swal.fire({
       title: "¡Producto Agregado!",
       text: "Tu producto ha sido agregado al carrito correctamente.",
@@ -49,37 +57,30 @@ const ItemDetail = ({ id, nombre, precio, img, descripcion }) => {
   };
 
   return (
-    <div className= "itemDetail">
+    <div className= 'itemDetail'>
       <h2>Nombre: {nombre}</h2>
       <h3>Precio: {precio}</h3>
-      <p>ID: {id}</p>
-      <img src={img} alt={nombre} style={{ maxWidth: "35%" }} />
+      <h3>ID: {id}</h3>
+      <img src={img} alt={nombre} />
 
-      <p className= "itemDetail__descripcion">
-        Descripción: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, autem. Explicabo commodi molestiae soluta eaque quos nostrum voluptatibus quam, laudantium impedit! Quaerat excepturi deserunt sed illo soluta necessitatibus placeat similique. {descripcion}
+      <p className= 'itemDetail__descripcion'>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime numquam dolore natus ipsa molestiae facere assumenda. Voluptas omnis magni saepe, consequatur atque dolorem eius ipsum est quis porro neque quibusdam!
       </p>
 
       {compraFinalizada ? (
         <p>¡Compra Finalizada!</p>
       ) : (
-        <div className= "itemDetail__contador">
-          <p className= "itemDetail__cantidad">Cantidad: {contador}</p>
-          <button className= "itemDetail__button" onClick={decrementar}>
-            -
-          </button>
-          <button className= "itemDetail__button" onClick={incrementar}>
-            +
-          </button>
-          <button className= "itemDetail__button" onClick={agregarAlCarrito}>
-            Agregar al carrito
-          </button>
-          <button className= "itemDetail__button" onClick={finalizarCompra}>
-            Finalizar compra
-          </button>
-        </div>
+        <>
+          <div className= 'itemDetail__contador'>
+            <p className= 'itemDetail__cantidad'>Cantidad: {stock > 0 ? <ItemCount inicial={1} stock={stock} funcionAgregar={agregarAlCarrito} /> : 0}</p>
+          </div>
+          <div className= 'itemDetail__buttons'>
+            {stock > 0 && <button className= 'itemDetail__button' onClick={finalizarCompra}>Terminar compra</button>}
+          </div>
+        </>
       )}
     </div>
   );
-};
+}
 
 export default ItemDetail;
