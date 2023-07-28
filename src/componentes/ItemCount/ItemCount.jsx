@@ -30,6 +30,7 @@ const ItemCount = ({ inicial, stock, funcionAgregar }) => {
       <button className= "itemDetail__button" onClick={agregarAlCarrito}>Añadir al carrito</button>
     </>
   );
-}
+}  
 
 export default ItemCount;
+
