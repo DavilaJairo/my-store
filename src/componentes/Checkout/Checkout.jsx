@@ -21,7 +21,7 @@ const Checkout = () => {
   const [error, setError] = useState("");
   const [ordenId, setOrdenId] = useState("");
 
-  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext);
+  const { carrito, vaciarCarrito, total, cantidadTotal, agregarProducto, eliminarProducto } = useContext(CarritoContext);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
