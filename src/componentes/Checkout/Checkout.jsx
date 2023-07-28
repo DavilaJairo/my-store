@@ -116,9 +116,11 @@ const Checkout = () => {
     <div className= "checkout">
       <h2>Checkout</h2>
       <form onSubmit={manejadorFormulario}>
-        {carrito.map(producto => (
+        {carrito.map((producto) => (
           <div key={producto.item.id}>
-            <p>{producto.item.nombre} x {producto.cantidad}</p>
+            <p>
+              {producto.item.nombre} x {producto.cantidad}
+            </p>
             <p>{producto.item.precio}</p>
             <hr />
           </div>
@@ -165,14 +167,7 @@ const Checkout = () => {
 
         <div className= "form-group">
           <label htmlFor="card-number">Número de tarjeta:</label>
-          <input
-            type="text"
-            id="card-number"
-            name="card-number"
-            value={cardNumber}
-            onChange={handleCardNumberChange}
-            maxLength={MAX_CARD_NUMBER_LENGTH}
-          />
+          <input type="text" id="card-number" name="card-number" value={cardNumber} onChange={handleCardNumberChange} maxLength={MAX_CARD_NUMBER_LENGTH} />
         </div>
 
         <div className= "form-group">
@@ -187,11 +182,11 @@ const Checkout = () => {
 
         {error && <p className= "error-msg">{error}</p>}
 
-        <button type="submit" className= "miBtn">Finalizar Compra</button>
+        <button type="submit" className= "miBtn">
+          Finalizar Compra
+        </button>
       </form>
-      {ordenId && (
-        <strong>¡Gracias por tu compra! Tu número de orden es {ordenId}</strong>
-      )}
+      {ordenId && <strong>¡Gracias por tu compra! Tu número de orden es {ordenId}</strong>}
     </div>
   );
 };
