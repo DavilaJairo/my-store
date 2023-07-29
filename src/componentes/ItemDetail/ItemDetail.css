@@ -1,20 +1,26 @@
 .itemDetail {
-  margin: 20px;
-  padding: 20px;
+  margin: 40px;
+  padding: 25px;
   background-color: #222;
   color: #fff;
   border-radius: 10px;
 }
+
+.itemDetail__image {
+  max-width: 100%; /* La imagen se ajustará al ancho máximo del contenedor */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+}
+
 
 .itemDetail__descripcion {
   margin-top: 40px;
 }
 
 .itemDetail__contador {
-  display: flex; /* Cambio para alinear horizontalmente los botones */
+  display: flex;
+  justify-content: center; /* Alinea los elementos horizontalmente */
   align-items: center;
-  justify-content: center;
-  margin-top: 150px;
+  margin-top: 20px;
 }
 
 .itemDetail__cantidad {
@@ -28,24 +34,25 @@
 }
 
 .itemDetail__button {
-  padding: 10px;
+  padding: 12px 30px; /* Ajusta el padding para más espacio entre los botones */
   font-size: 16px;
   border: none;
-  background-color: #444;
+  background-color: #ff4081; /* Usa el color rosa de la paleta de colores */
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 30px; /* Aumenta el radio para crear un diseño más redondeado */
   outline: none;
-  margin-right: 10px; /* Añadimos un margen entre los botones */
+  margin: 0 10px; /* Añade margen entre los botones */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra para un efecto más moderno */
 }
 
 .itemDetail__button:last-child {
-  background-color: #ff4081;
+  background-color: #007BFF; /* Usa el color azul de la paleta de colores */
 }
 
 .itemDetail__button:last-child:hover {
-  background-color: #ff79b0;
+  background-color: #3b82f6; /* Un tono más oscuro para el hover */
 }
 
 /* Media queries para dispositivos móviles y tablets */
@@ -68,3 +75,16 @@
     font-size: 14px;
   }
 }
+
+
+
+/* Resto de los estilos del componente */
+
+
+
+
+
+/* ItemDetail.css */
+
+
+
