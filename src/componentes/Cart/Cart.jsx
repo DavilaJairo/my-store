@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CarritoContext } from "../../context/CarritoContext";
+import { CarritoContext } from "../../CarritoContext/CarritoContext";
 import { Link } from "react-router-dom";
 import CartItem from "../CartItem/CartItem";
 import './Cart.css'; // Agrega la hoja de estilos para Cart
