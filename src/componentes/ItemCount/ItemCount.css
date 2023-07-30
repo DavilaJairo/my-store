@@ -6,6 +6,15 @@
   border-radius: 10px;
 }
 
+.button {
+    display: flex;
+}
+
+span.item-count {
+    color: black;
+    text-decoration: none;
+}
+
 .itemDetail__descripcion {
   margin-top: 40px;
 }

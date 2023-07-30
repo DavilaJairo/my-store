@@ -17,7 +17,9 @@ const NavBar = () => {
     <Navbar expand="lg" className="navbar">
       <Container>
         <Link to="/">
-          <Navbar.Brand className="navbar-brand">GameStore</Navbar.Brand>
+          <Navbar.Brand className="navbar-brand">
+            <img src="/img/logo.png" alt="GameStore Logo" className="navbar-logo" />
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -57,3 +57,6 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
 export default ItemDetail;
 
 
+
+
+
