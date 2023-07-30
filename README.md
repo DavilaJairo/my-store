@@ -30,6 +30,18 @@ Para utilizar Firebase en esta aplicación, sigue los siguientes pasos:
 4. En la sección "Project settings" de Firebase, haz clic en "Add app" y sigue las instrucciones para agregar una nueva aplicación web.
 5. Copia las credenciales de Firebase y configura las variables de entorno en el archivo `.env` de tu proyecto.
 
+## Dependencias
+
+- React: ^17.0.2
+- React-dom: ^17.0.2
+- React-router-dom: ^5.3.0
+- Firebase: ^9.0.0
+- Vite: ^2.5.0
+- Sweetalert2: ^11.1.5
+- Node-sass: ^6.0.1
+- Axios: ^0.23.0
+
+
 ## Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más información.
 
